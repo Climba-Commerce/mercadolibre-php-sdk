@@ -374,7 +374,7 @@ class RestClientApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
@@ -400,7 +400,7 @@ class RestClientApi
         $already_querys = ($encode_url != $resourcePath) ? true : false;
         $resourcePath = str_replace('%2F', '/', $resourcePath);
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'DELETE',
             $this->config->getHost() . $resourcePath . ($already_querys ? "&{$query}" : "?{$query}"),
@@ -668,7 +668,7 @@ class RestClientApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
@@ -694,7 +694,7 @@ class RestClientApi
         $already_querys = ($encode_url != $resourcePath) ? true : false;
         $resourcePath = str_replace('%2F', '/', $resourcePath);
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
             $this->config->getHost() . $resourcePath . ($already_querys ? "&{$query}" : "?{$query}"),
@@ -978,7 +978,7 @@ class RestClientApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
@@ -1004,7 +1004,7 @@ class RestClientApi
         $already_querys = ($encode_url != $resourcePath) ? true : false;
         $resourcePath = str_replace('%2F', '/', $resourcePath);
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($already_querys ? "&{$query}" : "?{$query}"),
@@ -1286,7 +1286,7 @@ class RestClientApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
@@ -1312,7 +1312,7 @@ class RestClientApi
         $already_querys = ($encode_url != $resourcePath) ? true : false;
         $resourcePath = str_replace('%2F', '/', $resourcePath);
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'PUT',
             $this->config->getHost() . $resourcePath . ($already_querys ? "&{$query}" : "?{$query}"),
